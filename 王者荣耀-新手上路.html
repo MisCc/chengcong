@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>王者荣耀-新手上路</title>
+    <script>
+        window.onload=function () {
+            var  oUl2=document.getElementById('ul2');
+            var  oUl1=document.getElementById("ul1");
+            var   aInput=oUl1.getElementsByTagName("input");
+            var  sDiv=[document.getElementById("div2"),document.getElementById("yiwen"),document.getElementById("tuijian")];
+            var aLi=oUl2.getElementsByTagName('li');
+            var oDiv=document.getElementById("moshi");
+            var aDiv=oDiv.getElementsByTagName('div');
+
+
+            var oDivl1=document.getElementById("divl1");
+            var oUl=oDivl1.getElementsByTagName('ul')[0];
+            var aLil=oUl.getElementsByTagName('li');
+            oUl.innerHTML=oUl.innerHTML+oUl.innerHTML;
+//            oUl.style.width=aLil[0].offsetWidth*aLil.length+'px';
+
+            var time1=setInterval(function () {
+
+                if(oUl.offsetLeft<-oUl.offsetWidth/2){
+                    oUl.style.left='0';
+                }
+                oUl.style.left=oUl.offsetLeft-3+'px';
+            },30);
+
+            var oDivl2=document.getElementById("divl2");
+            var oUl0=oDivl2.getElementsByTagName('ul')[0];
+            var aLil2=oUl.getElementsByTagName('li');
+            oUl0.innerHTML=oUl0.innerHTML+oUl0.innerHTML;
+//            oUl0.style.width=aLil2[0].offsetWidth*aLil.length+'px';
+
+            var time2=setInterval(function () {
+
+                if(oUl0.offsetLeft<-oUl0.offsetWidth/2){
+                    oUl0.style.left='0';
+                }
+                if(oUl0.offsetLeft>0){
+                    oUl0.style.left=-oUl0.offsetWidth/2+'px';
+                }
+                oUl0.style.left=oUl0.offsetLeft+3+'px';
+            },30);
+
+
+            for(var a=0;a<aInput.length;a++){
+                aInput[a].index=a;
+                aInput[a].onclick=function () {
+                    for(var a=0;a<aInput.length;a++){
+                        aInput[a].style.backgroundColor='#665883';
+                        sDiv[a].style.display='none';
+                    }
+                    this.style.backgroundColor='green';
+                    sDiv[this.index].style.display='block';
+                }
+            }
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].index=i;
+                aLi[i].onmouseover=function () {
+                    for (var i=0;i<aLi.length;i++){
+                        aLi[i].style.backgroundColor='#9cb563';
+                        aDiv[i].style.display='none';
+                    }
+                    this.style.backgroundColor='#712942';
+                    aDiv[this.index].style.display='block';
+                }
+            }
+            var yiwen0=document.getElementById("yiwen");
+            var  iDiv0=yiwen0.getElementsByTagName("img");//月份的div
+            var  aDiv0=document.getElementById("neixing");//写字板的div
+            var aP=aDiv0.getElementsByTagName("p");
+            var SRC2=['技能介绍/坦克.png','技能介绍/刺客.png','技能介绍/战士.png','技能介绍/辅助.png','技能介绍/射手.png','技能介绍/法师.png' ];
+            var SRC1=[iDiv0[0].src,iDiv0[1].src,iDiv0[2].src,iDiv0[3].src,iDiv0[4].src,iDiv0[5].src];
+            for(var s=0;s<iDiv0.length;s++){
+                iDiv0[s].index=s;
+                iDiv0[s].onmouseover=function () {
+                    for(var s=0;s<iDiv0.length;s++){
+                        iDiv0[s].src=SRC1[s];
+                        aP[s].style.display='none';
+                    }
+//                    this.style.backgroundColor='#564937';
+//                    aDiv0.innerHTML=neirong[this.index]+'</p>';
+                    aP[this.index].style.display='block';
+                    this.src=SRC2[this.index];
+                }
+            }
+        }
+    </script>
+    <style>
+        header{height: 500px;background-image: url("壁纸/0_看图王.jpg")}
+        section{height:1900px;background-color:cadetblue;position: relative}
+        footer{height:100px;background-image: url("壁纸/0_看图王.jpg");text-align: center}
+        #ul1>li{list-style: none;float: left;margin-left: 60px;color: #8820d6;}
+        #div1{height: 45px;background:#75d6c8;opacity: 0.8}
+        #div1>ul>li{list-style: none;float: left;margin-left: 60px;color: #8820d6;text-align: center}
+        ul{list-style: none}
+        li{display: inline-block;}
+        a{text-decoration: none;color:#315bf0}
+        h2{text-align: left;margin:30px auto;color:darkorchid;font-size: 30px;margin-left: 140px}
+        #ul1>li{margin: 0 auto}
+        #ul1>li>input{width: 400px;height: 50px;background-color:#665883;border: 1px solid #665883;color: whitesmoke;font-size: 25px}
+        #div2{text-align: center;display: none;width: 1200px;height: 1300px;margin: 0 auto}
+        #moshi>div>p,#moshi>div>img,  #div2>div>p, #div2>div>img{display: inline-block}
+        #moshi>div>p, #div2>div>p{line-height:40px;position: relative;top: -90px;color: wheat}
+        #moshi>div>p>span,#div2>div>p>span{font-size: 25px;color: #88f5ab}
+        #ul2{z-index: 100}
+        #ul2>li{width: 70px;height: 70px;margin:20px 30px;line-height: 10px;font-size: 30px;color: wheat;background-color: #9cb563}
+        /*#ul2>li>p{width: 20px;height: 20px;margin:4px auto}*/
+        #ul2>li{border: 1px solid;border-radius: 10px 0 10px 0}
+        #moshi>div{display: none}
+        #yiwen>div{float: left;margin:30px 50px;color:#e2c26b}
+        #yiwen>div>span{font-size: 23px;color: #665883}
+        #yiwen>a>img{float:right;margin: 30px 60px;}
+        #neixing{width: 1000px;height: 700px;border: 5px solid #9cb563;position: absolute;bottom:10px;
+            left: 65px;border-radius: 50px;color:#4f2f5c;font-size: 23px;text-indent: 1cm;padding: 20px;line-height: 45px}
+        #tuijian, #neixing>p{display: none}
+        #tuijian>ul>li,#tuijian>ul>li>img{border: 1px  solid green;border-radius: 15px}
+        #tuijian>ul>li{margin-left: 100px;margin-top: 50px;padding: 10px;background-color: #e2c26b;box-shadow:#8a3d77 15px 15px 15px ;text-align: center;color:#4f2f5c ;font-size: 20px}
+        #tuijian>div{margin-left: 30px;color: #e2c26b}
+        #tuijian>div>h3{background-color: #8a3d77;color: cyan}
+
+        #divl2,#divl1{width: 1200px;height: 300px;margin: 10px auto;position: relative;overflow: hidden;border: 2px solid yellow;box-shadow:#8a3d77  13px 13px 13px }
+        #divl2>ul,#divl1>ul{width: 2400px;height: 300px;position: absolute;top: 0;left:0;margin: 0}
+        #divl2,#divl2>ul,#divl2>ul>li,#divl1,#divl1>ul,#divl1>ul>li{float: left;list-style: none}
+    </style>
+</head>
+<body>
+<header>
+    <div id="div1">
+        <ul>
+            <li style="margin-left:140px "><a href="7503王者对战.html">官网首页<br/>HOME</a></li><li><a href="王者荣耀-英雄大全.html"> 英雄介绍<br/>INFORMATION</a></li>
+            <li><a href="王者荣耀-新手上路.html"> 新手上路<br/>GREENHAND</a></li><li><a href="王者对战-上分秘籍.html"> 上分秘籍<br/>CHEATS</a></li><li><a href="王者对战-最新资讯.html">最新资讯<br/>LATEST NEWS</a></li>
+            <li><a href="http://pvp.qq.com/web201605/item.shtml">游戏资料<br/>GAME INFO</a></li><li><a href="http://bbs.g.qq.com/forum.php?mod=forumdisplay&fid=56891&ADTAG=game.web.yxzj"> 玩家互动<br/>COMMUNITY</a></li>
+        </ul>
+    </div>
+</header>
+<section>
+<div style="font-size: 25px;margin-left: 70px;height: 50px;line-height: 50px;color: #8820d6"><a href="7503王者对战.html">王者荣耀首页</a> > 走进王者荣耀 </div>
+
+    <ul id="ul1"><li style="margin-left: 28px"><input type="button"value="走进王者荣耀"></li><li ><input style="background-color:green " type="button"value="新手指南"></li><li><input type="button"value="新手推荐"></li></ul>
+                  <!--第一层div-->
+    <div  id="section">
+    <div id="div2">
+    <div>
+        <h2 style="height: 70px;line-height: 70px">游戏介绍</h2><img  src="人物贴图/大乔.jpeg" width="400" height="400">
+        <p ><span>游戏介绍</span><br/>
+        《王者荣耀》是腾讯第一5V5英雄公平对战手游，于10月28日开启不限<br/>
+        号测试！5V5王者峡谷（含迷雾模式）、5V5深渊大乱斗、以及3V3、1V1<br/>
+        等多样模式一键体验，热血竞技尽享快感！海量英雄随心选择，精妙配<br/>
+        合默契作战！10秒实时跨区匹配，与好友组队登顶最强王者！操作简单<br/>
+        易上手，一血、五杀、超神，极致还原经典体验！实力操作公平对战，<br/>
+        回归MOBA初心！</p>
+       </div>
+        <ul id="ul2"><li style="background-color: #712942"><p>1</p></li><li><p>2</p></li><li><p>3</p></li><li><p>4</p></li><li><p>5</p></li></ul>
+                                                        <!--111111-->
+        <h2>游戏特色</h2>
+        <div id="moshi">
+        <div style="display: inline-block">
+            <p ><span>5V5越塔强杀！开团</span><br/>
+                我们拥有5V5经典地图，使用三路推塔核心玩法，呈现出最原滋<br/>
+                原味的MOBA游戏对战体验！在王者荣耀里，我们根据英雄玩法<br/>
+                使用不同的策略，根据英雄特色组建完美阵容，<br/>
+                默契配合成就最强王者！</p>
+            <img src="游戏模式/1.jpg" height="338" width="530"/>
+        </div>
+                                                                <!--22222-->
+        <div >
+            <p><span>年度最佳电竞手游</span><br/>
+                荣获中国游戏风云榜《2015年度最佳电竞手游》！随着游戏内各项赛事<br/>
+                的不断铺开，已发布以“嗨电竞”为主题的电竞发展计划，将构筑以<br/>
+                玩家为主体，囊括多种形式与层次的赛事，注重以比赛激发用户热情，<br/>
+                并邀请媒体共建的电竞体系，打造开放式、大众式的电竞氛围。一起！<br/>
+                让移动电竞流行起来！</p>
+            <img src="游戏模式/2.jpg" height="338" width="530"/>
+        </div>
+                                                                <!--3333333-->
+        <div>
+            <p><span>师徒系统，师傅带你开车上王者！</span><br/>
+                打造新型生态社交圈，新增师徒系统！旨在给新老玩家建立亲密关系，<br/>
+                新玩家可以通过拜师并和师父一起游戏学习到游戏技巧和丰厚奖励，<br/>
+                更好的度过新手期，而老玩家也可以通过带徒弟获得荣誉奖励和尊重。</p>
+            <img src="游戏模式/3.jpg" height="338" width="530"/>
+        </div>
+                                                                <!--4444444-->
+        <div>
+            <p><span>恋人系统，王者之路不再孤单！</span><br/>
+                打造新型生态社交圈，我们在游戏内对于亲密关系需求是不同的。<br/>
+                新增恋人基友系统，拥有好友关系时，在loading界面会有专属<br/>
+                特效和显示，局内更有专属画面呈现！您的王者之路从来不曾孤单！</p>
+            <img src="游戏模式/4.jpg" height="338" width="530"/>
+        </div>
+                                                                <!--5555555-->
+        <div>
+            <p><span>迷雾模式，MOBA经典视野玩法</span><br/>
+                迷雾模式中，大部分区域被迷雾笼罩，视野受到限制。我们需要通过插眼<br/>
+                和反眼的默契配合，掌控游戏中的视野。MOBA经典视野玩法，更加考验<br/>
+                每一位召唤师的意识和操作，不断挑战自我！</p>
+            <img src="游戏模式/457021444912915.jpg" height="338" width="530"/>
+        </div>
+        </div>
+        <div id="divl1" style="display: block">
+            <ul>
+                <li><img src="../王者荣耀/人物贴图/橘右京.jpg" height="300" width="300"/></li>
+                <li><img src="../王者荣耀/人物贴图/甄姬.jpg" height="300" width="300"/></li>
+                <li><img src="../王者荣耀/人物贴图/诸葛亮.jpg"  height="300" width="300"/></li>
+                <li><img src="../王者荣耀/人物贴图/貂蝉.jpg"  height="300" width="300"/></li>
+            </ul>
+        </div>
+        <div id="divl2" style="display: block">
+            <ul>
+                <li><img src="../王者荣耀/人物贴图/兰陵王.jpg" height="300" width="300"/></li>
+                <li><img src="../王者荣耀/人物贴图/典韦.jpg" height="300" width="300"/></li>
+                <li><img src="../王者荣耀/人物贴图/大乔.jpeg"  height="300" width="300"/></li>
+                <li><img src="../王者荣耀/人物贴图/妲己.jpg"  height="300" width="300"/></li>
+            </ul>
+        </div>
+    </div>
+    <div id="yiwen">
+
+            <div style="margin-left: 150px"><span>疑问一 : 连攻略都看不懂</span><br/>
+                <br/>
+            什么是AD？ 什么是ADC？ 什么是GANK？ 大神们究竟在说啥？<br/>
+            很多新手看攻略都会感到很疑惑，因为大神们通常都会用大量电竞<br/>
+                术语来代表英雄定位、战术行为。官网君给新手们精心准备常见的<br/>
+                点击下面的专业名词 可查看详细解释，看是不是你不懂得词噢</div>
+            <div style="margin-left: 0"><span>疑问二 : 不知道选什么英雄和技能</span><br/><br/>
+                不知道选什么英雄？<br/>
+                选英雄当然是选自己最熟悉，玩的最多的英雄胜率会越高了，<br/>
+                选简单的肉盾/战士生存率会高点 。但是，如果你一直只玩几个英雄，<br/>
+                那你肯定只能停留在新手阶段，因为你不了解其他英雄，<br/>就不清楚在对线的时候，
+                </div>
+       <div style="float: left;margin-left: 150px">
+           <span>疑问三 : 和对方1V1对线老被别人单杀？<br/><br/>
+            请记住一下 单挑对线要点：不知道选什么英雄？</span><br/>
+            1.控制消耗对方，技能甩完就跑。猴子隐身状态中逃跑<br/>
+            2.利用远程技能消耗，CD好了再来。如孙尚香技能1远程，<br/>
+            3.没技能CD坚决不拼。如召唤师技能、大招；<br/>
+            4.等级比对方低的时候没必胜把握不上；<br/>
+            5.对方什么技能释放后你可以尽情的追打必须心里有数<br/>
+           <br/>
+            <span>对线时老被对方1个甚至几个抓？<br/>
+            那么请记住以下对线防抓要点</span><br/><br/>
+            1.兵线正常时候只补最后一刀<br/>
+            2.兵线在对方区域果断用技能快速清兵后回我方野区清野<br/>
+            3.位移技能要留住，即将击杀对手没人支援才使用位移技能<br/>
+            4.战斗开始先清一只野怪到2级，兵线和等级优势都有</div>
+            <div style="margin-left: -23px"><span>疑问四 : 经常输都不知道输在哪</span><br/><br/>
+                为什么明明人头数领先，但我方还是输了比赛？<br/>
+                这种情况肯定是输在塔被拆太多，主要原因在一下几点<br/>
+                1.我方玩家从不管兵线，只顾着打架，小兵把塔给拆了<br/>
+                2.人头都集中在1个人身上，这个人从来都是杀完人不拆塔。<br/><br/>
+
+                <span>为什么明明我方人头领先，但是团战老输？<br/>
+                    这种情况原因有几种，主要一下几点：</span><br/><br/>
+                1.我方没有肉，输出全打到对方肉身上，对方刺客和法师尽情虐杀我方<br/>
+                2.团战一开就乱，各自为战，有进无退，从不考虑阵型和自己的职责<br/>
+                应该在什么时候主动出击，什么时候回避对手。<br/>
+                下面给 新手们推荐几个操作简单又好用的英雄<br/>
+                其实正确选择召唤师技能，应该是根据你所选择的英雄来决定。<br/>
+                例如鲁班七号的被动技第五次普攻会变扫射，如果用狂暴<br/>
+                就可以加速触发时间
+            </div>
+        <a href="#neixing"><img style="margin-right: 200px" src="技能介绍/QQ截图20170428144003.png" height="99" width="251"/></a>
+        <a href="#neixing"><img src="技能介绍/QQ截图20170428144029.png" height="101" width="248"/></a>
+            <a href="#neixing"><img src="技能介绍/QQ截图20170428144046.png" height="102" width="245"/></a>
+                <a href="#neixing"><img style="margin-right: 200px" src="技能介绍/QQ截图20170428144123.png" height="102" width="251"/></a>
+                    <a href="#neixing"><img src="技能介绍/QQ截图20170428144139.png" height="98" width="245"/></a>
+                        <a href="#neixing"><img src="技能介绍/QQ截图20170428144202.png" height="100" width="248"/></a>
+    <div id="neixing">
+        <!--坦克-->
+       <p >作为一个高血量的坦克，不去扛伤害和咸鱼没有什么区别。但是，站在前面挨打并不是坦克的唯一任务。试想，如果有人偷走了你手里的杀猪刀，你空有一身膘敢上战场和带着军火的敌人拼吗吗？所以作为坦克，挡伤害和保护后排才是我们的第一、第二作用。而坦克的第三个作用，往往被我们忽略了，那就是意识。这往往是一波团战能否胜利的决定性因素。坦克的意识包括要考虑开团的时机、切入的时机和如何给敌方找不痛快。下面就给大家讲一下坦克可以用的意识套路。<br/>
+           &nbsp; &nbsp; &nbsp; 坦克要时刻估量自家团队的战斗力能不能打过对面，甚至越塔团灭。如果正面打团或越塔强杀打不过，我们可以先“抓单”，再团战。比如对面只有四个或四个人以下在一起，另一两个人在比较远的地方做着什么不可描述的事情（反正来不及支援）。这时候身为坦克的你可以在兵线带完的情况下，召集自家其余四个人“以多欺少”，拿下对面半数人头，甚至一两个塔。如果有能力正面开团，当然选择直接冲上去互相伤害。<br/>&nbsp; &nbsp; &nbsp;那么怎么给敌方找不痛快呢？坦克可以在敌方野区边缘进行“露视野”，即观察敌军在野区的人数和血量，合适的时候召唤自己家的打野，将其收割。比如发现敌方打野在打红蓝buff，在buff和敌军都只剩少量血时可以配合打野收个人头、收个buff，再把前来支援的一个人收掉。坦克的切入时机一般都在敌方主力输出露面时，使用技能将其控制，让他不能输出，同时也要时刻注意保护我方输出。</p>
+        <!--刺客-->
+        <p>刺客的首要任务是游走抓敌，刺客讲究的就是贱，不贱何为刺客，游走抓敌的同时还要清理兵线，和观察敌方情况，多躲在草丛中，防止突然开团，或者突然被袭击而难以应付。<br/>&nbsp; &nbsp; &nbsp;团战中，刺客是一个最考验耐性和稳定的职业，他的主要任务就是收割，在团战后敌方一般都已经被队友打残而准备逃跑，这时便是刺客开始完成他的任务，另外，刺客还有一个任务就是解决后排输出的Adc，以减少队伍损伤，这是个十分危险的任务，当然对于团队的作用也是巨大的。<br/>&nbsp; &nbsp; &nbsp;
+            刺客在团战的切入时间一般都是双方交火以后在敌人对队友交了技能后，随后切入，可以直接对着后排Adc先切入，再转过头帮助队友，也可以在双方准备开始撤离时迅速切入收割，刺客的切入一定要看准时机，要有耐性等待，避免错误时间切入导致自己还没有发挥作用就命丧黄泉。<br/>&nbsp; &nbsp; &nbsp;
+            还有一个问题，就是要不要追杀对方残血英雄，答案当然是要，特别是落单的英雄，残血的英雄已经失去了大量抵抗能力，极容易被击杀，刺客的爆发输出刚好是他们的噩梦，所以一定要尝试追击对方残血，不要放过任何机会。<br/>&nbsp; &nbsp; &nbsp;
+            忽略了防御和生命上线，这也是他致命的弱点，一旦被提前围杀或者控制，那么就面临必死的命运，也失去了他的作用，第三，刺客的输出方式一般都是突袭，利用突然袭击，使敌人没有过多的反应时间，然后达到输出最大化。</p>
+        <p  >战士的单兵作战能力非常强，在一对一的情况下虽然不能说是无敌，但是自己只要想跑，对面还是很难单杀战士的。尽管单挑非常出色，但是《王者荣耀》毕竟是一个团队游戏，打赢团战才能赢得胜利，战士在团战中具有核心地位。<br/>&nbsp; &nbsp; &nbsp;
+        团战前期，战士需要注意走位，要寻找合适的机会来切入战场。例如吕布，吕布的大招魔神降世是一个控制技能，能够击飞并且减速敌人，吕布可以利用大招来先手开团，如果发现敌人的阵型保持的不好，输出英雄与坦克分散开来的时候，那就毫不犹豫开启大招先手开团吧。不过战士毕竟不是坦克，在切入敌人人群中后，最好还要留下一套逃生技能以便撤出战场，否则会被敌人集火秒掉，这样只能把自己队伍带向团灭。<br/>&nbsp; &nbsp; &nbsp;
+        团战中期，这时候一般会发展成十人混战，可能会搞不清楚自己的攻击目标，究竟先打谁、后打谁是个棘手的问题。很多战士都有突进能力，在团战的时候一定要限制对面输出，专门追着脆皮英雄打，可以打法师、射手和刺客，尽量不要追着坦克打。因为打坦克很难打出伤害，不一定能在短时间内击杀敌人，反而给对面的法师和射手英雄创造了输出环境。<br/>&nbsp; &nbsp; &nbsp;
+        团战后期，战士虽然在团战中发挥的作用很大，但是毕竟不是主力输出英雄，团战的输出还得靠法师、射手和刺客这些英雄。</p>
+        <p >团战技巧：<br/>&nbsp; &nbsp; &nbsp;
+            团战前期时，辅助应该有敏锐的嗅觉，知道团战会在何时何地爆发，提前赶赴战场，站好位置，为队友提供视野和抢占有利的位置，便于输出位置的输出，当然也要必免过早被敌方发现集火秒杀，使团战陷入被动。<br/>&nbsp; &nbsp; &nbsp;
+            在团战中辅助应该站在自己主力输出位置的旁边，默默的保护他，在必要时要勇敢的站出来做肉盾，保护输出吸收伤害。在敌方刺客强杀输出位时，应该给好自己的控制技能，有效的阻止敌方的强攻，配合队友击杀敌方或是赶走敌方，保护输出位。<br/>&nbsp; &nbsp; &nbsp;
+            团战后期时要灵活的观察团战的局势，在优势时想办法留住更多的敌方英雄，配合队友完成收割，在劣势时则要及时指挥队友撤离战场，掩护队友撤离。<br/>&nbsp; &nbsp; &nbsp;
+            辅助小技巧:<br/>&nbsp; &nbsp; &nbsp;
+            入场时机：团战入场时机的选择上可以早入场或是团战刚开始时入场，选择合适的位置和为队友提供视野，当然也要必免完全暴露在敌方的火力下，在队友到达之前就被集火秒杀，所以要利用好草丛，即能抢占有利位置，又能必免被秒杀。在配合刺客抓人是则可以在刺客入场后入场，必免打草惊蛇，这样也可以更好的使用控制技能必免被躲过。<br/>&nbsp; &nbsp; &nbsp;</p>
+        <p>射手共通点：<br/>&nbsp; &nbsp; &nbsp;
+            射手本身的血量非常之低，前、中、后期都是需要被保护的对象，并且大多的射手都是缺少位移技能的如：后羿，狄仁杰，鲁班。但是即使这样，射手在对局中还是有着一席之地，这其中的原因就是射手可以做到持续输出，不像刺客、法师需要依靠技能才能够做到秒人的效果，正是因为射手可以做到持续输出，使得射手在团战中极有可能成为一个carry点，只要射手可以在团战中存活下来，收割战场也是完全有可能的。<br/>&nbsp; &nbsp; &nbsp;
+            射手前期的爆发力并不高，所以在对线上我们只要保持自己的经验与经济不落后，并且在清完兵线后，可以去野区清掉小野怪，提高自己的经济，但是值得注意的是射手的追杀能力并不强，尤其是对于那些没有位移或者加速的射手，<br/>&nbsp; &nbsp; &nbsp;所以射手在大部分的情况下，是没有必要去追杀一个残血的敌人的，但是如果是对方的人员的位置都可以在小地图上看到，并且距离自己很远，也是可以试着去追杀的，射手去追杀残血还是需要很注意，刺客或是法师的伤害都是很高的，要是被反打一套的话，也是极有可能被反杀，所以大多数情况下不介意射手去追杀残血。<br/>&nbsp; &nbsp; &nbsp;
+            射手的血量不高，在团战中哪怕那么一点点的波及也是有可能毙命的，所以这就需要我们对团战中的位置的把握，<br/>&nbsp; &nbsp; &nbsp;</p>
+        <p style="display: block">法师在《王者荣耀》中是队伍的核心，在团战中是主要输出点，需要在安全的位置向敌人倾泻出大量的技能伤害。有很多法师的操作性比较难、上手难度较高，也影响到了法师的出场率，不过一旦熟练的掌握这些法师的玩法，在团战中法师就能成为中坚力量，是能否赢得团战的关键点。<br/>&nbsp; &nbsp; &nbsp;
+        团战前期，法师的生存才是最重要的，因为法师的血量和防御都不高，是对面攻击的头号目标。法师一定要游走在团战外围，或者是在队友的身边，身边有一个可靠的坦克或者战士保护才行。法师需要注意躲避敌人的刺客和战士的控制技能，注意不要被敌人给近身，如果法师被敌人打到，要及时使用逃生技能，比如净化、金身等召唤师技能。<br/>&nbsp; &nbsp; &nbsp;
+        团战中期，有很多法师都是输出与控制兼顾，有些控制技能是强力团控技能，这些团控技能非常给力，可以用来先手控制敌人发起团战。关于法师的输出目标，控制与攻击敌人的法师、射手和刺客优先，如果没有机会打到敌人，有一种笨人的方法，就是能打到谁就打谁，打肉也可以，只要自己与队友的伤害集中在一个人身上，即使是防御能力很强的坦克也撑不住。<br/>&nbsp; &nbsp; &nbsp;
+        团战后期，这时候可能很多人都已经残血，法师一般不需要去追残血，因为很多法师的位移能力缺乏，不擅长去追击敌人，搞不好反而会被敌人反杀。团战后期法师仍然是需要与自己人抱团，不要落单。</p>
+    </div>
+    </div>
+        <div id="tuijian" >
+            <ul><li style="margin-left: 150px"><img src="狄仁杰.jpg" height="300" width="250"/><p>大唐的传奇神探-狄仁杰</p></li>
+                <li><img src="鲁班大师.jpg" height="300" width="250"/><p>电玩小子鲁班七号</p></li>
+                <li><img src="亚瑟.jpg" height="300" width="250"/><p>圣骑之力亚瑟</p></li></ul>
+            <div><h3>【英雄锦囊】大唐的传奇神探-狄仁杰攻略</h3>
+                <p>
+                    前期出装：抵抗之靴+破灭君主+无尽战刃<br/>
+                    六神装 ：抵抗之靴+破灭君主+无尽战刃+三圣之力+破甲弓+泣血之刃<br/>
+                    出装解析：狄仁杰这名射手主要的输出手段还是多依靠普攻，所以出完性价比最高的出门装鞋子之后第一件装备我们还是应该优先选择最贴近和契合<br/>
+                    狄仁杰被动的破灭君主。后面的几件装备可以依据敌方阵容来进行出装先后顺序的调整。如果对方前排英雄较多的话可以提前把破甲弓出出来。<br/><br/>
+                    铭文推荐(推荐前言：优先选择暴击和攻速类的铭文)<br/>
+                    四级铭文 (铭文等级120)<br/>
+                    红色惩戒×10 蓝色急救×10 绿色野性×10<br/>
+                    属性总和：暴击率+13% 最大生命+135 物理穿透+38 攻速+4% 移速+5%<br/>
+                    五级铭文 (铭文等级150)<br/>
+                    红色祸源×10 蓝色狩猎×10 绿色鹰眼×10<br/>
+                    属性总和：暴击率+16% 物理攻击+9 物理穿透+64 攻速+10% 移速+10%<br/>
+                    技巧心得<br/>
+                    狄仁杰这位射手有别于其他的射手英雄，真的是一位仅依靠普攻就能打出爆炸般伤害的射手英雄。每三下普攻就能触发一次被动打出一块随即的令牌，<br/>
+                    令对手防不胜防。狄仁杰的一、三技能较多时间是作为消耗或者是收割技能来使用。而二技能则是作为一个打断技能来使用。比如对线现在版本强势的英雄橘右京，<br/>
+                    那么狄仁杰可以在橘右京打出大招的一瞬间释放自己的二技能来打断橘右京的大招。当然这里只是简单的举个例子。狄仁杰是一位比较早期就存在于王者峡谷的英雄了。<br/>
+                    老司机们肯定对他再熟悉不过了。通过版本的更迭狄仁杰的技能设定被重做过，使得狄仁杰技能更灵活多变一些。肯定会有些玩家对狄仁杰这位英雄不削，<br/>
+                    其实在我看来狄仁杰还是比较看脸的。如果在对局的关键时刻触发被动连续打出好几块搜查令，也是非常令人头疼的。峡谷英雄千万种，只看哪款是你的爱。
+                </p></div>
+            <div>
+                <h3>AS仙阁神男让你知道小短腿鲁班的魅力</h3>
+                <p>
+                    前期：建议携带召唤师技能闪现，一技能出门。开局下路配合队友快速拿下红buff下边的小野怪和第一波兵线，升到二级后可以瞄准敌方红或蓝buff区二技能释放，<br/>
+                    或许会有意外收获，配合下路队友实行压制带线，此时要远离河道草丛，避免敌军猥琐支援。下路发育的同时要经常通过小地图切换查看其它两路对战情况，<br/>
+                    用二技能随时支援或收割。前期鲁班七号完全以发育为主，需要打下良好的经济基础。<br/>
+                    中后期： 该时期的鲁班七号输出能力十分抢眼，也是敌军最虎视眈眈的存在。所以，鲁班七号最需要注意的就是自己的走位，尽量不要独自塔外带线，<br/>
+                    没有我方英雄的保护很容易被敌军带走。团战时，先手释放大招，可以影响对方走位，破坏敌方阵营，并向敌军人数较多的位置释放一技能，产生眩晕控制效果并触发被动。<br/>
+                    鲁班七号的攻击距离非常远，输出时站在可以攻击到敌方前排的位置即可，最好猥琐在草丛中，如果敌军刺客类英雄一直没有出现，此时一定要小心被刺客切入，<br/>
+                    可站在队友可以保护到的范围内，当有残血状态敌军时，可用二技能收取人头，无法击杀也尽量不要去追击，交给我方刺客或战士即可。<br/>
+                    六神装：末世+急速战靴+无尽战刃+破甲弓+名刀·司命+破军<br/>
+                    鲁班七号在前期比较疲软，末世增加物理攻击、攻击速度和物理吸血，并能提高打野效率，鲁班七号的被动为多段普通攻击，该装备被动效果和其输出特点十分契合，<br/>
+                    可以很好的帮助鲁班七号提高前期综合能力。急速战靴增加攻击速度，鲁班七号的核心输出来自于被动扫射，这便对其攻速有了较高要求，该装备结合末世便可以很好<br/>
+                    的满足鲁班七号对攻速的要求。无尽战刃用来提高其输出暴击能力，让鲁班七号此时既有攻速又有了不俗的输出伤害。破甲弓是adc必备装备，鲁班七号的站位决定其<br/>
+                    在团战时需要更多的对敌方前排进行输出，破甲弓最大限度的提高了鲁班七号对物理防御性英雄的伤害。名刀·司命可以避免被敌军秒杀，让其在被刺客切入时有了<br/>
+                    自保甚至反杀能力。破军的超高输出效果最大限度的提高了鲁班七号的后期输出能力。<br/>
+                </p>
+            </div>
+            <div><h3>既能控又能杀，游走亚瑟就是这么无敌</h3>
+                <p>六神装：红莲斗篷、抵抗之靴、不死鸟之眼、冰痕之握、极寒风暴、不祥征兆<br/>
+                解析：根据亚瑟的坦克定位，在出装思路上首先就是兼顾他的扛伤能力，这能保证他在团战中站的更久，打出更多的控制增益友<br/>
+                军；其次亚瑟的先手打法，功能性的冷却缩减保证他的技能释放，让他团战中能发挥的更好。<br/>
+                前期:红莲斗篷+抵抗之靴<br/>
+                解析：这套前期装备最大的特点是双抗均衡、伤害不俗，红莲斗篷让他能更好的对抗敌军物理英雄，被动献祭的持续伤害配合友军<br/>
+                的输出更容易击杀敌军；抵抗之靴的韧性加成可以减少他被控制的时间，即便被敌军控制，也能让亚瑟从容的应对。<br/>
+                中期：不死鸟之眼+冰痕之握<br/>
+                解析：不死鸟之眼可以提供法术防御和最大生命，让亚瑟中期的扛伤能力更强，被动血统的回复效果加成让亚瑟被动技能回复的血量更多，<br/>
+                极大的增强了亚瑟中期的续航能力；冰痕之握的冷却缩减可以让亚瑟技能释放速度更快，被动强击的减速效果让他控制能力更加突出。<br/>
+                后期：极寒风暴+不祥征兆<br/>
+                解析：极寒风暴可以提供冷却缩减和物理防御，让亚瑟后期的技能释放更快、抵御伤害的能力更强，被动冰心一定程度上可以限制敌军<br/>
+                的输出和灵活性，让亚瑟后期能有更好的发挥；不祥征兆则进一步增强他后期的扛伤能力，也让他限制敌人的能力更强。<br/><br/>
+
+                铭文推荐<br/>
+                红色铭文：宿命，攻击速度+1%、最大生命+33.7、物理防御+2.3<br/>
+                蓝色铭文：隐匿，物理攻击+1.6、移速+1%<br/>
+                绿色铭文：鹰眼，物理攻击+0.9、物理穿透+6.4<br/>
+                解析：根据亚瑟的定位和打法，在铭文选择上首先兼顾的就是他的输出能力，物理攻击和物理穿透的组合能让他前期打出更高的伤害，<br/>
+                更容易击杀敌军建立前期优势；与此同时亚瑟的先手打法，一定的物理防御和最大生命加成也是很有必要的。<br/>
+                对战技巧<br/>
+                在召唤师技能上推荐携带终结，增强他的收割能力。前期对线亚瑟可以扮演战士角色走上单路线，也可以扮演坦克的角色走游走路线，<br/>
+                可根据战场形势灵活掌握。走上单路线时，亚瑟要以保证防御塔的安全为主，4级之后可以搭配友军同敌人打一波消耗，快速的击杀敌军<br/>
+                建立前期优势；走游走路线打法比较灵活，要根据战场形势随时线上增援，配合友军打野英雄进行反野和抓人，这种打法能将亚瑟的个人能力发挥到极致。</p></div>
+        </div>
+    </div>
+</section>
+<footer>
+    <a style="" href="#">关于我们|商务合作|免责声明|网站地图|	意见反馈</a>
+    <p style="">ICP证：闽B2-20040099	不良信息举报中心	闽网文[2015]1993-042号<br/>	新出网证(闽)字06号
+        Copyright © 2004 - 2017 4399.com All Rights Reserved. 四三九九网络股份有限公司 版权所有</p>
+</footer>
+</body>
+</html>

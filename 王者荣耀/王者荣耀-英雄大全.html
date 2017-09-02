@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>王者荣耀-英雄大全</title>
+    <script>
+        window.onload=function () {
+            var oDiv3=document.getElementById("div3");
+            var aImg=oDiv3.getElementsByTagName("div");
+
+            var oUl=document.getElementById("ul");
+            var aLi=oUl.getElementsByTagName("li");
+
+            var oDiv5=document.getElementById("div5");
+            var aDiv=oDiv5.getElementsByTagName("div");
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].index=i;
+                aLi[i].onmouseover=function () {
+                    for(var i=0;i<aLi.length;i++){
+                        aDiv[i].style.display='none';
+                    }
+                    aDiv[this.index].style.display='block';
+                };
+                aLi[i].onmouseout=function () {
+                    for(var i=0;i<aLi.length;i++){
+                        aDiv[i].style.display='none';
+                    }
+                }
+            }
+    for(var j=0;j<aImg.length;j++){
+
+        aImg[j].onmouseover=function () {
+            for(var j=0;j<aImg.length;j++){
+                aImg[j].style.transform='scale(0.5)';
+            }
+            this.style.transform='scale(2)';
+        };
+        aImg[j].onmouseout=function () {
+            for(var j=0;j<aImg.length;j++){
+                aImg[j].style.transform='scale(1)';
+            }
+        }
+    }
+        }
+    </script>
+    <style>
+        header{height: 500px;background-image: url("壁纸/header3.jpg")}
+        section{height:2100px;background-image: url("壁纸/8ea8b42648aa3b92fcbdab8a938dc4e9.jpeg");position: relative}
+        footer{height:100px;background-image: url("壁纸/17b90576e14195c8158f32c0589b186f.jpg");text-align: center}
+        #div1{height: 45px;background:wheat;opacity: 0.8}
+        #div2{background:wheat;opacity: 0.8; color: #8820d6;font-size: 20px}
+        #div2{margin-top: 15px;position: fixed;top:250px;left: 0;width: 120px;height: 300px;z-index: 100}
+        #div2>ul>li{list-style: none;position: relative;left: -20px;margin-bottom: 40px}
+        #div1>ul>li{list-style: none;float: left;margin-left: 60px;color: #8820d6;text-align: center}
+        a{text-decoration: none;}
+        #div3>div{float: left;border: 6px solid wheat;padding: 0;background-color: lightcoral}
+        .div4{width: 500px;height: 300px;position: fixed;top:265px;left: 120px;background:wheat;opacity: 0.8; color: #8820d6;display: none}
+        #img1{position: fixed;top:40px;}
+        #img2{position: fixed;top: 460px}
+        #div2,.div4{border-radius: 20px}
+       /*#div3>div>img{transition:all 1s }*/
+       /*#div3>div>a>img:hover{ transform: scale(2) ;}*/
+        span{color: orchid;text-shadow: black 2px 2px 2px }
+        #div6{width: 800px;height: 650px;border: 3px solid green;  background-position: center;background-repeat: no-repeat;position: absolute;bottom: 250px;left: 90px}
+        h1{z-index: 99;position:fixed;top: 40px;left: 50px;color: #d6692c;width: 30px;font-size: 20px}
+    </style>
+</head>
+<body>
+<header>
+<div id="div1">
+    <ul>
+        <li style="margin-left:140px "><a href="7503王者对战.html">官网首页<br/>HOME</a></li><li><a href="王者荣耀-英雄大全.html"> 英雄介绍<br/>INFORMATION</a></li>
+        <li><a href="王者荣耀-新手上路.html"> 新手上路<br/>GREENHAND</a></li><li><a href="王者对战-上分秘籍.html"> 上分秘籍<br/>CHEATS</a></li><li><a href="王者对战-最新资讯.html">最新资讯<br/>LATEST NEWS</a></li>
+        <li><a href="http://pvp.qq.com/web201605/item.shtml">游戏资料<br/>GAME INFO</a></li><li><a href="http://bbs.g.qq.com/forum.php?mod=forumdisplay&fid=56891&ADTAG=game.web.yxzj"> 玩家互动<br/>COMMUNITY</a></li>
+    </ul>
+</div>
+    <div id="div2">
+        <ul id="ul">
+            <li>新英雄</li><li>干将莫邪</li><li>女娲</li><li>鬼谷子</li>
+        </ul>
+    </div>
+</header>
+<section>
+    <div id="div3">
+    <div style="margin-left: 150px;transform: rotate(-40deg)"><a href="#div6"><img src="人物贴图/兰陵王.jpg" height="250" width="250"/></a></div>
+    <div style="transform: rotate(-40deg)"><a href="#div6"><img src="人物贴图/关羽.jpg" height="250" width="250"/></a></div>
+    <div style="transform: rotate(20deg)"><a href="#div6"><img src="人物贴图/典韦.jpg" height="250" width="250"/></a></div>
+    <div style="transform: rotate(-40deg)"><a href="#div6"><img src="人物贴图/貂蝉.jpg" height="250" width="250"/></a></div>
+    <div  style="margin-left: 150px;transform: rotate(23deg)"><a href="#div6"><img src="人物贴图/大乔.jpeg" height="250" width="250"/></a></div>
+    <div style="transform: rotate(23deg)"><a href="#div6"><img src="人物贴图/妲己.jpg" height="250px" width="250px"/></a></div>
+    <div style="transform: rotate(45deg)"><a href="#div6"><img src="人物贴图/嬴政.jpg" height="250px" width="250px"/></a></div>
+    <div style="transform: rotate(0deg)"><a href="#div6"><img src="人物贴图/赵云.jpg" height="250px" width="250px"/></a></div>
+    <div  style="margin-left: 150px;transform: rotate(-45deg)"><a href="#div6"><img src="人物贴图/甄姬.jpg" height="250px" width="250px"/></a></div>
+    <div style="transform: rotate(30deg)"><a href="#div6"><img src="人物贴图/程咬金.jpeg" height="250px" width="250px"/></a></div>
+    <div style="transform: rotate(-40deg)"><a href="#div6"><img src="人物贴图/花木兰.jpg" height="250px" width="250px"/></a></div>
+    <div style="transform: rotate(13deg)"><a href="#div6"><img src="人物贴图/诸葛亮.jpg" height="250px" width="250px"/></a></div>
+    <div style="margin-left: 150px;transform: rotate(-15deg)"><a href="#div6"><img src="人物贴图/宫本武藏.jpg" height="250" width="444"/></a></div>
+    <div style="transform: rotate(20deg)"><a href="#div6"><img src="人物贴图/剑仙李白.jpeg" height="250" width="300"/></a></div>
+    <div style="transform: rotate(-20deg)"><a href="#div6"><img src="人物贴图/橘右京.jpg" height="250" width="250"/></a></div>
+    </div>
+    <div id="div5">
+    <div class="div4"><img src="人物贴图/小乔.png" height="150" width="250"/><img src="人物贴图/女娲.png" height="150" width="250"/>
+        <img src="人物贴图/吕布.jpeg" height="150" width="250"/><img src="人物贴图/干将.jpeg" height="150" width="250"/></div>
+    <div class="div4"><p><span>被动：嗜杀剑气</span>飞剑攻击会残留持续5秒的雌雄两种剑气，剑气伤害会被<br/>其他飞剑触发，贴身范围未成型的剑胚无法残留剑气。剑气造成法术伤害。</p>
+        <p><span>技能1：护主邪冢</span>干将将剑冢用力向前推刺出并造成法术伤害，范围内敌人<br/>被朝同一方向击飞击退。</p>
+        <p><span>技能2：雌雄双剑</span>凌空成剑，释放雄剑，雌雄双剑以不同的曲<br/>型弹道飞行对敌方造成法术伤害。</p>
+        <p><span>技能：莫邪夺魂</span>莫邪携雌雄双剑合一，对沿路的敌人造成法<br/>术伤害。对英雄额外造成巨额减速，2秒逐步恢复正常。</p></div>
+    <div class="div4"><p><span>被动-气数终焉</span>对于距离自己更远的敌人造成更高的伤害。</p>
+        <p><span>太古雷霆</span>女娲召唤法阵，并在锻造的延迟后对法阵内的敌人造成法术伤害。</p>
+        <p><span>造化勒令</span>女娲在制定位置召唤法阵后对法阵内的敌人造<br/>成法术伤害并标记，女娲的其他技能伤害会触发标记，<br/>造成法术伤害与眩晕效果。</p>
+        <p><span>制裁神谕</span>将自己固定在一个法阵上，无法移动和攻击，<br/>使其他技能的射程增加并获得额外的法术穿透，<br/>最多持续10秒，效果结束后增加移速。</p></div>
+    <div class="div4"><p><span>被动技能-玄微子之灵：</span>鬼谷子每次指挥玄微子施展法术后，玄微子会进入攻击姿态<br/>，跟随鬼谷子的普攻对周围敌人进行攻击，该状态持续4秒。</p>
+        <p><span>纵横兵法：</span>：鬼谷子指挥玄微子移动，撞击路径上的敌人造成伤害</p>
+        <p><span>先知奇谋：</span>鬼谷子召回玄微子，玄微子回到鬼谷子身边时添加护盾</p>
+        <p><span>万物有灵：</span>鬼谷子命令玄微子卷起狂风，击退周围敌人，<br/>并在之后3秒制造一个可治疗友方的法术立场。<br/>
+            如果不出意外的话鬼谷子基本上就是一个强力的法师英雄了！而在王者荣耀
+            中强力的法师并不多，能拿得出手的 也就一个！不知道鬼谷子的出现会不<br/>
+            会打破这个局面呢？</p></div>
+    </div>
+    <img id="img1" src="人物贴图/2.bmp" width="165" height="150"/><a href="#" ><img id="img2" src="人物贴图/3.bmp"/></a>
+<div id="div6"><img src="胜率1.png" height="256" width="1199"/><img src="shenlv.png" height="521" width="1200"/></div>
+    <h1>点击查看英雄>></h1>
+</section>
+<footer>
+    <a style="" href="#">关于我们|商务合作|免责声明|网站地图|	意见反馈</a>
+    <p style="">ICP证：闽B2-20040099	不良信息举报中心	闽网文[2015]1993-042号<br/>	新出网证(闽)字06号
+        Copyright © 2004 - 2017 4399.com All Rights Reserved. 四三九九网络股份有限公司 版权所有</p>
+</footer>
+</body>
+</html>

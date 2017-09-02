@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>王者对战平台-首页</title>
+    <script>
+        window.onload = function () {
+            var  oUl=document.getElementById('ul');
+            var oDiv=document.getElementById("div2");
+            var aLi=oUl.getElementsByTagName('li');
+            var aDiv=oDiv.getElementsByTagName('div');
+//            var he=document.getElementById('he');
+//            var imgs=['url("b1.jpg")','url("b2.jpg")','url("b3.jpg")','url("b4.jpg")'];
+//            function cc() {
+//                var i=Math.floor(Math.random()*100+1);
+//                if(i<75){he.style.backgroundImage=imgs[0]}else if(i<50){aheader.style.backgroundImage=imgs[1]}
+//                else if(i<25){aheader.style.backgroundImage=imgs[2]}else{aheader.style.backgroundImage=imgs[3]}
+//            }
+//            window.onload=setInterval('function cc() {  }',1000);
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].index=i;
+                aLi[i].onmouseover=function () {
+                    for (var i=0;i<aLi.length;i++){
+                        aLi[i].style.color='wheat';
+                        aDiv[i].style.display='none';
+                    }
+                    this.style.color='#712942';
+                    aDiv[this.index].style.display='block';
+                }
+            }
+        }
+    </script>
+    <style>
+        body{ width: 1320px;height:909px;margin: 0 auto;overflow:scroll}
+        header,#div0{float: left}
+        header{width: 300px;  height: 900px; border: 1px solid wheat;background-position: bottom;background-image: url("b3.jpg");background-repeat: no-repeat}
+        section{width: 1000px;  height: 800px; border: 1px solid wheat;background-color: #3f5076;}
+        footer{width: 1000px;height: 98px; border: 1px solid wheat;text-align: center;background-color: #6f4630}
+        #div1{width: 300px;height: 150px;text-shadow: black 10px 10px 8px;margin-bottom: 30px;font-size:22px;background: linear-gradient(to top, #3f5076,#440e27)}
+        h1{color: burlywood;text-shadow: #54d5ff 5px;text-align: center;line-height: 150px;margin-top: 0;font-size: 40px}
+        header>a{width: 200px;height: 60px;border: 1px solid wheat;margin-left: 45px;text-align: center;line-height:
+                60px;margin-bottom: 40px;border-radius: 15px;font-size: 20px;font-weight: bold;}
+        li{list-style: none;display: inline-block;margin-right: 50px;border: 1px;color: wheat}
+        #div2>div{position: absolute;top: 105px;right: 95px;border: 1px solid wheat;width: 450px;
+            height: 310px;padding-top: 25px;padding-left: 35px;display: none;color:#e2c26b;border-radius: 15px;line-height: 26px;text-decoration: underline}
+        #div2>div>a, #div2>div>a:hover{ transition:all 1s }
+        #div2>div>a:hover{ transform: scale(1.3) rotate(360deg);}
+        a{text-decoration: none;display: inline-block;color: #e2c26b;}
+        header a:hover{background-color:#712942}
+    </style>
+</head>
+<body>
+<header id="he">
+<div id="div1"><h1>王者对战平台</h1></div>
+    <a href="王者荣耀-英雄大全.html">英雄大全</a>
+    <a href="王者荣耀-新手上路.html">新手上路</a>
+    <a href="王者对战-上分秘籍.html">上分秘籍</a>
+    <a href="王者对战-最新资讯.html">最新资讯</a>
+    <a href="王者荣耀-英雄大全.html#div6">S7英雄排行</a>
+   <a href="王者对战-王者论坛.html">王者论坛</a>
+</header>
+<div id="div0">
+<section>
+  <div  style="width: 400px;height: 800px;display: inline-block"><img src="8954.jpg"/></div>
+    <div id="div2" style="display: inline-block;width: 595px;height: 800px">
+        <ul id="ul" style="position: absolute;top: 40px;right: 40px;margin: 0;padding: 0">
+            <li>》热点快讯</li> <li>》英雄解析</li> <li>》英雄出装</li> <li>》精彩视频</li>
+        </ul>
+        <hr style="position: absolute;top:70px;right:38px;width: 588px"/>
+        <div style="display: block;color:orange">
+            [攻略]04-25【直播】王者荣耀2017KPL职业联赛直播<br/>[攻略]04-26王者荣耀4月25日更新英雄调整汇总 庞统惨<br/>
+            [攻略]04-26王者荣耀阿轲攻略汇总 暗夜猫娘阿轲重生<br/>[攻略]04-26王者荣耀每日一题答案汇总 每日一题答案<br/>
+            [攻略]04-25王者荣耀五一特供永久皮肤有哪些 五五开<br/>[攻略]04-25王者荣耀KPL春季赛第五周英雄盘点 花木兰<br/>
+            [攻略]04-25王者荣耀干将莫邪背景故事 干将莫邪背景<br/>[攻略]04-25王者荣耀花木兰水晶猎龙者原画 水晶猎龙<br/>
+            [攻略]04-25王者荣耀五五开黑勋章兑换什么好 五五开<br/>[攻略]04-24王者荣耀赤红勋章每天可以获得几个 赤红<br/>
+            [攻略]04-24王者荣耀五一劳动节头像框怎么得 五一专</div>
+        <div style="color:chartreuse">[解析]王者荣耀干将莫邪攻略汇总 干将莫邪技能<br/>[解析]04-26王者荣耀狄仁杰重做攻略汇总
+            狄仁杰重做<br/>[解析]04-21王者荣耀荆轲重做攻略汇总荆轲重做技能<br/> [解析]04-19王者荣耀太乙真人解析
+            太乙真人好不好用<br/>[解析]04-19王者荣耀蔡文姬解析 一个完美的辅助英雄<br/>[解析]04-14王者荣耀庞统攻略汇总
+            庞统技能出装皮肤<br/>[解析]04-12王者荣耀孙悟空重做攻略汇总 孙悟空重做<br/>[解析]04-12王者荣耀杨玉环攻略汇总
+            杨玉环技能出装<br/>[解析]04-11王者荣耀高渐离使用技巧 S7鱼塘核弹强势<br/>[解析]04-11王者荣耀刘邦重做攻略汇总
+            刘邦重做技能<br/>[解析]03-31王者荣耀孙膑重做攻略汇总 孙膑重做技能
+            </div>
+        <div style="color: lightcoral">[出装]4-24王者荣耀李白出装推荐 攻速暴击至上04-24<br/>[出装]04-24王者荣耀李白大神出装 出装顺序套路解析<br/>
+            [出装]04-21我不只是一个医生 王者荣耀扁鹊最强出装<br/>[出装]04-21王者荣耀荆轲重做出装顺序 荆轲重做最强<br/>
+            [出装]04-20王者荣耀嬴政出装顺序 远程输出法师嬴政<br/>[出装]04-20请叫我射手一哥！王者荣耀S7马可波罗出装<br/>
+            [出装]04-20王者荣耀妲己出装推荐 一套带走一个的强<br/>[出装]04-20中距离之王依然强势！王者荣耀橘右京S7出<br/>
+            [出装]04-20王者荣耀艾琳怎么出装 最美女射手艾琳出<br/>[出装]04-20王者荣耀狄仁杰重做出装推荐 抓住你就别<br/>
+            [出装]04-19辅助荣耀！王者荣耀第一辅助太乙真人出装<br/></div>
+        <div style="color:fuchsia">[视频]王者荣耀新强无敌荆轲参上【马赛解说】视<br/>[视频]04-25王者荣耀TOP5：诸葛亮双五杀一战成神视频<br/>[视频]04-24
+            王者情报站第18期：以阿轲之名回归视频<br/>[视频]04-21泡泡搞笑解说：王者荣耀站撸王鲁班视频<br/>[视频]04-21
+            来游拍，看精彩王者荣耀直播<br/>[视频]04-20王者荣耀天秀庞统深度剖析【马赛解说】视<br/>[视频]04-18
+            王者荣耀TOP5：鲁班千里抢龙定胜局视频<br/>[视频]04-17王者情报站第17期：庞统上线震撼峡谷视频<br/>[视频]04-14
+            泡泡搞笑解说：你扛得住我的暴击吗？<br/>[视频]04-13
+            王者荣耀杀人无形兰陵王【马赛解说】视频<br/>[视频]04-11王者荣耀TOP5：李白极限操作逆风五杀视频</div>
+        <div style="display: block;position:absolute;top:455px;right: 95px">
+        <a href="#"><img src="小Q截图-20170426165545.png" height="70" width="212"/></a>
+        <a href="#"><img src="小Q截图-20170426165557.png" height="" width="213"/></a>
+            <a href="#"><img src="小Q截图-20170426165613.png" height="70" width="213"/></a>
+                <a href="#"><img src="小Q截图-20170426165629.png" height="70" width="213"/></a>
+                    <a href="#"><img style="margin-left:10px;margin-bottom: -15px " src="小Q截图-20170426170454.png" height="82" width="316"/></a>
+                        <a href="#"> <img style="margin-left:110px " src="小Q截图-20170426170522.png" height="80" width="314"/></a>
+        </div>
+    </div>
+</section>
+<footer>
+<a style="margin-bottom:0;margin-top: 10px;" href="#">关于我们|商务合作|免责声明|网站地图|	意见反馈</a>
+    <p style="margin-top: 0">ICP证：闽B2-20040099	不良信息举报中心	闽网文[2015]1993-042号<br/>	新出网证(闽)字06号
+    Copyright © 2004 - 2017 4399.com All Rights Reserved. 四三九九网络股份有限公司 版权所有</p>
+</footer>
+</div>
+</body>
+</html>
